@@ -5,9 +5,9 @@ import java.util.List;
 public class Course {
 
     private long CourseID;
-    private String CourseName;
-    private String TeacherName;
-    private List<Student> Students;
+    protected String CourseName;
+    protected String TeacherName;
+    protected List<Student> Students;
 
     public long getCourseID() {
         return this.CourseID;
