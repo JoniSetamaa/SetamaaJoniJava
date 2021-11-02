@@ -8,10 +8,10 @@
 		<version>2.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>joni.javaloppu</groupId>
-	<artifactId>lopputyo</artifactId>
+	<groupId>joni.java</groupId>
+	<artifactId>javaproject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>lopputyo</name>
+	<name>javaproject</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>16</java.version>

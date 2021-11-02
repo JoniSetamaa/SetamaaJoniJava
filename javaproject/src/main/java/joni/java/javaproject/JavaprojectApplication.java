@@ -1,13 +1,13 @@
-package joni.javaloppu.lopputyo;
+package joni.java.javaproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LopputyoApplication {
+public class JavaprojectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LopputyoApplication.class, args);
+		SpringApplication.run(JavaprojectApplication.class, args);
 	}
 
 }

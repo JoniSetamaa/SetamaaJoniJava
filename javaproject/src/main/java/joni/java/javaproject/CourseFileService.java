@@ -1,4 +1,4 @@
-package joni.javaloppu.lopputyo;
+package joni.java.javaproject;
 
 public class CourseFileService {
     
