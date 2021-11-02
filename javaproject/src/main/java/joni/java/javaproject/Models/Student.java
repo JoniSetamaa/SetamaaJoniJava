@@ -1,20 +1,24 @@
 package joni.java.javaproject.Models;
 
+import java.lang.reflect.GenericArrayType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 public class Student {
 
-    private long ID;
+    @Id
+    @GeneratedValue(strategy=GenericArrayType.AUTO)
+    private long id;
     private String FirstName;
     private String LastName;
     static int NextID;
 
-
-
     public long getID() {
-        return this.ID;
+        return this.id;
     }
 
     public void setID(long ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public String getFirstName() {
@@ -41,7 +45,7 @@ public class Student {
     public Student(String FirstName, String LastName) {
         this.FirstName = FirstName;
         this.LastName = LastName;
-        ID = NextID;
+        id = NextID;
         NextID++;
     }
 

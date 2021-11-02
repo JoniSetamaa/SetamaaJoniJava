@@ -42,16 +42,16 @@ public class Course {
     }
 
     public boolean addStudentToCourse(Student Student) {
-        if(Students.contains(Student)){
+        if(Students.contains(Student)) {
             return false;
-        }else{
+        }else {
             Students.add(Student);
             return true;
         }
     }
 
-    public void removeStudent(Student Student){
-        if(Student.contains(Student)){
+    public void removeStudent(Student Student) {
+        if(Student.contains(Student)) {
             Students.remove(Student);
         }
     }
