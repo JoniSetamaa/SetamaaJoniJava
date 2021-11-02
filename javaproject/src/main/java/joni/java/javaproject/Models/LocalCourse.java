@@ -35,6 +35,17 @@ public class LocalCourse extends Course {
         this.CourseSize = CourseSize;
     }
     
+    @Override
+    public boolean addStudentToCourse(Student Student){
+        if(Students.size() < CourseSize){
+            return super.addStudentToCourse(Student);
+        }else {
+            return false;
+        }
+    }
     
-    
+    @Override
+    public String toString(){
+        return CourseName+" - "+TeacherName+" - "+ClassRoom;
+    }
 }
