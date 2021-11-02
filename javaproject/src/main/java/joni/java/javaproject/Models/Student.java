@@ -1,13 +1,13 @@
 package joni.java.javaproject.Models;
 
-import java.lang.reflect.GenericArrayType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 public class Student {
 
     @Id
-    @GeneratedValue(strategy=GenericArrayType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
     private String FirstName;
     private String LastName;

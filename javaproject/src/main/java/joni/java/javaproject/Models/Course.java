@@ -51,8 +51,9 @@ public class Course {
     }
 
     public void removeStudent(Student Student) {
-        if(Student.contains(Student)) {
+        if(Students.contains(Student)) {
             Students.remove(Student);
         }
     }
+
 }
