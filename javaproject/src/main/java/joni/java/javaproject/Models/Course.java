@@ -2,8 +2,14 @@ package joni.java.javaproject.Models;
 
 import java.util.List;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class Course {
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private long CourseID;
     protected String CourseName;
     protected String TeacherName;
