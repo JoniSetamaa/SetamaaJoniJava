@@ -38,7 +38,7 @@ public class Student {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return FirstName+" "+LastName;
     }
 

@@ -6,11 +6,11 @@ public class OnlineCourse extends Course {
 
     private String URL;
 
-    public String getURL(){
+    public String getURL() {
         return this.URL;
     }
 
-    public void setURL(String URL){
+    public void setURL(String URL) {
         this.URL = URL;
     }
 
@@ -22,7 +22,7 @@ public class OnlineCourse extends Course {
     }
     
     @Override
-    public String toString(){
+    public String toString() {
         return CourseName+" - "+TeacherName+" - "+URL;
     }
     

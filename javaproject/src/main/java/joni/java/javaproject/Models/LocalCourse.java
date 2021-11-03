@@ -36,8 +36,8 @@ public class LocalCourse extends Course {
     }
     
     @Override
-    public boolean addStudentToCourse(Student Student){
-        if(Students.size() < CourseSize){
+    public boolean addStudentToCourse(Student Student) {
+        if(Students.size() < CourseSize) {
             return super.addStudentToCourse(Student);
         }else {
             return false;
@@ -45,7 +45,7 @@ public class LocalCourse extends Course {
     }
     
     @Override
-    public String toString(){
+    public String toString() {
         return CourseName+" - "+TeacherName+" - "+ClassRoom;
     }
 }
