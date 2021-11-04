@@ -7,6 +7,9 @@ import joni.java.javaproject.Models.Student;
 
 public interface ICourseFileService {
     
+    // Reads list of students from txtx-file
     List<Student> readStudentsFromFile(String filePath) throws FileNotFoundException;
+
+    // Reads list of courses from txt.file
     List<Course> readCoursesFromFile(String filePath) throws FileNotFoundException;
 }

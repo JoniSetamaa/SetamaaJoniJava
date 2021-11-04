@@ -9,56 +9,66 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private long CourseID;
-    protected String CourseName;
-    protected String TeacherName;
-    protected List<Student> Students;
+    private long id;
+    protected String courseName;
+    protected String teacherName;
+    protected List<Student> students;
 
-    public long getCourseID() {
-        return this.CourseID;
+
+    public Course(String courseName, String teacherName, List<Student> students) {
+        this.courseName = courseName;
+        this.teacherName = teacherName;
+        this.students = students;
     }
 
-    public void setCourseID(long CourseID) {
-        this.CourseID = CourseID;
+    public long getid() {
+        return this.id;
+    }
+
+    public long setid() {
+        return this.id;
     }
 
     public String getCourseName() {
-        return this.CourseName;
+        return this.courseName;
     }
 
     public void setCourseName(String CourseName) {
-        this.CourseName = CourseName;
+        this.courseName = CourseName;
     }
 
     public String getTeacherName() {
-        return this.TeacherName;
+        return this.teacherName;
     }
 
     public void setTeacherName(String TeacherName) {
-        this.TeacherName = TeacherName;
+        this.teacherName = TeacherName;
     }
 
     public List<Student> getStudents() {
-        return this.Students;
+        return this.students;
     }
 
     public void setStudents(List<Student> Students) {
-        this.Students = Students;
+        this.students = Students;
     }
 
     public boolean addStudentToCourse(Student Student) {
-        if(Students.contains(Student)) {
+        if(this.students.contains(Student)) {
+            System.out.println("Student is already part of this course");
             return false;
-        }else {
-            Students.add(Student);
+        }
+        else {
+            this.students.add(Student);
             return true;
         }
     }
 
     public void removeStudent(Student Student) {
-        if(Students.contains(Student)) {
-            Students.remove(Student);
+        if(this.students.contains(Student)) {
+            this.students.remove(Student);
         }
+        System.out.println("Student not found!");
     }
 
 }

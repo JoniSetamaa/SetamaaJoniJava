@@ -9,44 +9,47 @@ public class Student {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
-    private String FirstName;
-    private String LastName;
-    static int NextID;
+    private String firstName;
+    private String lastName;
+   
 
-    public long getID() {
+    public Student(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+
+    public long getId() {
         return this.id;
     }
 
-    public void setID(long ID) {
-        this.id = ID;
+    public long setId() {
+        return this.id;
     }
+
 
     public String getFirstName() {
-        return this.FirstName;
+        return this.firstName;
     }
 
-    public void setFirstName(String FirstName) {
-        this.FirstName = FirstName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
-        return this.LastName;
+        return this.lastName;
     }
 
-    public void setLastName(String LastName) {
-        this.LastName = LastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     @Override
     public String toString() {
-        return FirstName+" "+LastName;
+        return this.lastName + " " + this.firstName;
     }
 
-    public Student(String FirstName, String LastName) {
-        this.FirstName = FirstName;
-        this.LastName = LastName;
-        id = NextID;
-        NextID++;
-    }
+
+   
 
 }

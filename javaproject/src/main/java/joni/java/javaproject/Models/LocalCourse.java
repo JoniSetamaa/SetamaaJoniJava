@@ -4,48 +4,34 @@ import java.util.List;
 
 public class LocalCourse extends Course {
 
-    private String ClassRoom;
-    private int CourseSize = 25;
+    private String classRoom;
     
-    public LocalCourse(String CourseName, String TeacherName, List<Student> Students, String ClassRoom) {
-        this.CourseName = CourseName;
-        this.TeacherName = TeacherName;
-        this.Students = Students;
-        this.ClassRoom = ClassRoom;
+    public LocalCourse(String courseName, String teacherName, List<Student> students, String classRoom) {
+        super(courseName, teacherName, students);
+        this.classRoom = classRoom;
     }
 
     public String getClassRoom() {
-        return this.ClassRoom;
+        return this.classRoom;
     }
 
-    public void setClassRoom(String ClassRoom) {
-        this.ClassRoom = ClassRoom;
-    }
-
-    public int getCourseSize() {
-        return this.CourseSize;
-    }
-
-    public void setCourseSize(int CourseSize) {
-        this.CourseSize = CourseSize;
-    }
-
-    public LocalCourse(String ClassRoom, int CourseSize) {
-        this.ClassRoom = ClassRoom;
-        this.CourseSize = CourseSize;
+    public void setClassRoom(String classRoom) {
+        this.classRoom = classRoom;
     }
     
     @Override
-    public boolean addStudentToCourse(Student Student) {
-        if(Students.size() < CourseSize) {
-            return super.addStudentToCourse(Student);
-        }else {
+    public boolean addStudentToCourse(Student student) {
+        if(this.getStudents().size() < 25) {
+            return super.addStudentToCourse(student);
+        }
+        else {
+            System.out.println("Cannot add new student to this course. The course is full!");
             return false;
         }
     }
     
     @Override
     public String toString() {
-        return CourseName+" - "+TeacherName+" - "+ClassRoom;
+        return super.getCourseName()+" - "+super.getTeacherName()+" - "+this.getClassRoom();
     }
 }

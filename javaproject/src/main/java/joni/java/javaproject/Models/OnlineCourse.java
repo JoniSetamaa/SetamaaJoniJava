@@ -4,26 +4,23 @@ import java.util.List;
 
 public class OnlineCourse extends Course {
 
-    private String URL;
+    private String courseAddress;
 
-    public String getURL() {
-        return this.URL;
-    }
-
-    public void setURL(String URL) {
-        this.URL = URL;
-    }
-
-    public OnlineCourse(String courseName, String teacherName, List<Student> students, String url ) {
-        this.CourseName = courseName;
-        this.TeacherName = teacherName;
-        this.Students = students;
-        this.URL = url;
+    public OnlineCourse(String courseName, String teacherName, List<Student> students, String courseAddress) {
+        super(courseName, teacherName, students);
+        this.courseAddress = courseAddress;
     }
     
+    public String getCourseAddress() {
+        return this.courseAddress;
+    }
+
+    public void setCourseAddress(String courseAddress) {
+        this.courseAddress = courseAddress;
+    }
+
     @Override
     public String toString() {
-        return CourseName+" - "+TeacherName+" - "+URL;
-    }
-    
+        return super.getCourseName()+" - "+super.getTeacherName()+" - "+this.getCourseAddress();
+    }   
 }
