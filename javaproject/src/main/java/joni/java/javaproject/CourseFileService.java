@@ -39,9 +39,8 @@ public class CourseFileService implements ICourseFileService {
             if(rowData.length > 3){
             coursesFromFile.add(new OnlineCourse(rowData[0], rowData[1], new ArrayList<>(), rowData[2]));
             }
-            else{
+            else {
                 coursesFromFile.add(new LocalCourse(rowData[0], rowData[1], new ArrayList<>(), rowData[2]));
-
             }
         }
         sc.close();

@@ -10,7 +10,7 @@ public interface ICourseService {
     List<Student> getStudents();
 
     // Gets list of courses
-    List<Course> getCOurses();
+    List<Course> getCourses();
 
     // Gets student by ID. Returns null if student not found.
     Student getStudentById(long studentId);
