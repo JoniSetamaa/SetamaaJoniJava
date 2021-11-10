@@ -1,14 +1,11 @@
 package joni.java.javaproject.Models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Student {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private long id;
+    private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
+    private long studentId;
     private String firstName;
     private String lastName;
    
@@ -16,15 +13,16 @@ public class Student {
     public Student(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.studentId = ID_GENERATOR.getAndIncrement();
     }
 
 
     public long getId() {
-        return this.id;
+        return this.studentId;
     }
 
     public long setId() {
-        return this.id;
+        return this.studentId;
     }
 
 

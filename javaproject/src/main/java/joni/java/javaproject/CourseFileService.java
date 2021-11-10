@@ -13,6 +13,10 @@ import joni.java.javaproject.Models.Student;
 
 public class CourseFileService implements ICourseFileService {
 
+    public CourseFileService() {
+        
+    }
+
     @Override
     public List<Student> readStudentsFromFile(String filePath) throws FileNotFoundException {
         File file = new File(filePath);

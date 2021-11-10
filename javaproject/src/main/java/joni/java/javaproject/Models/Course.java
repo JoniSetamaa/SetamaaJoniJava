@@ -1,15 +1,12 @@
 package joni.java.javaproject.Models;
 
 import java.util.List;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class Course {
+public abstract class Course {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private long id;
+    private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
+    private long courseId;
     protected String courseName;
     protected String teacherName;
     protected List<Student> students;
@@ -19,14 +16,15 @@ public class Course {
         this.courseName = courseName;
         this.teacherName = teacherName;
         this.students = students;
+        this.courseId = ID_GENERATOR.getAndIncrement();
     }
 
     public long getid() {
-        return this.id;
+        return this.courseId;
     }
 
     public long setid() {
-        return this.id;
+        return this.courseId;
     }
 
     public String getCourseName() {
