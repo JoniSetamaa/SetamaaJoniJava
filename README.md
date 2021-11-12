@@ -1,2 +1,2 @@
-# JavaFinalProject
+# SetamaaJoniJava
 JavaFinalProject 
