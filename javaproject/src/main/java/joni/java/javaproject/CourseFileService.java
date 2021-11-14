@@ -13,30 +13,27 @@ import joni.java.javaproject.Models.Student;
 
 public class CourseFileService implements ICourseFileService {
 
-    public CourseFileService() {
-        
-    }
-
     @Override
     public List<Student> readStudentsFromFile(String filePath) throws FileNotFoundException {
-        File file = new File(filePath);
         List<Student> studentsFromFile = new ArrayList<>();
-        Scanner sc = new Scanner(file);
 
+        File file = new File(filePath);       
+        Scanner sc = new Scanner(file);
         while(sc.hasNext()) {
             String[] rowData = sc.nextLine().split(" ");
             studentsFromFile.add(new Student(rowData[0], rowData[1]));
         }
         sc.close();
+        
         return studentsFromFile;
     }
 
     @Override
     public List<Course> readCoursesFromFile(String filePath) throws FileNotFoundException {
-        File file = new File(filePath);
         List<Course> coursesFromFile = new ArrayList<>();
-        Scanner sc = new Scanner(file);
 
+        File file = new File(filePath);
+        Scanner sc = new Scanner(file);
         while(sc.hasNext()) {
             String[] rowData = sc.nextLine().split("--");
 
@@ -48,8 +45,8 @@ public class CourseFileService implements ICourseFileService {
             }
         }
         sc.close();
+
         return coursesFromFile;
     }
-}
-    
 
+}

@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public abstract class Course {
 
     private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
-    private long courseId;
+    private long id;
     protected String courseName;
     protected String teacherName;
     protected List<Student> students;
@@ -16,15 +16,11 @@ public abstract class Course {
         this.courseName = courseName;
         this.teacherName = teacherName;
         this.students = students;
-        this.courseId = ID_GENERATOR.getAndIncrement();
+        this.id = ID_GENERATOR.getAndIncrement();
     }
 
     public long getid() {
-        return this.courseId;
-    }
-
-    public long setid() {
-        return this.courseId;
+        return this.id;
     }
 
     public String getCourseName() {
@@ -51,22 +47,30 @@ public abstract class Course {
         this.students = Students;
     }
 
-    public boolean addStudentToCourse(Student Student) {
-        if(this.students.contains(Student)) {
-            System.out.println("Student is already part of this course");
+    public boolean addStudentToCourse(Student student) {
+        if(this.students.contains(student)) {
+            System.out.println("Cannot add student. Student exists on the course");
             return false;
-        }
-        else {
-            this.students.add(Student);
+        } else {
+            this.students.add(student);
+            System.out.println("Student " + student.getFirstName() + " " + student.getLastName() + " was added to the course " + getCourseName());
             return true;
         }
     }
 
-    public void removeStudent(Student Student) {
-        if(this.students.contains(Student)) {
-            this.students.remove(Student);
+    public void removeStudent(Student student) {
+        if(this.students.contains(student)) {
+            this.students.remove(student);
+            System.out.println("Student " + student.getFirstName() + " " + student.getLastName() + " was removed from the course.");
+        } else {
+            System.out.println("Student " + student.getFirstName() + " " + student.getLastName() + " not found.");
         }
-        System.out.println("Student not found!");
+        
+    }
+
+    @Override
+    public String toString() {
+        return courseName + " - " + teacherName;
     }
 
 }

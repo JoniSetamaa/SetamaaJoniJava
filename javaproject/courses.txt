@@ -2,3 +2,4 @@ HTML/CSS--Pekka Koski--A321
 Java programming--repe ope--https//oamk.zoom.us/repe--online 
 C++--Jukka Salo--C43
 Cloud services--Tuomas Kallio--www.moodle.fi--online
+BankSimul project--Pertti Luusua--A503

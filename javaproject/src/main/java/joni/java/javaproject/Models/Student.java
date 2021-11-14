@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Student {
 
     private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
-    private long studentId;
+    private long id;
     private String firstName;
     private String lastName;
    
@@ -13,18 +13,13 @@ public class Student {
     public Student(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.studentId = ID_GENERATOR.getAndIncrement();
+        this.id = ID_GENERATOR.getAndIncrement();
     }
 
 
     public long getId() {
-        return this.studentId;
+        return this.id;
     }
-
-    public long setId() {
-        return this.studentId;
-    }
-
 
     public String getFirstName() {
         return this.firstName;

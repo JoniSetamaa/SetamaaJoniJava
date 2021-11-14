@@ -21,6 +21,6 @@ public class OnlineCourse extends Course {
 
     @Override
     public String toString() {
-        return super.getCourseName()+" - "+super.getTeacherName()+" - "+this.getCourseAddress();
+        return super.toString() + " - " + courseAddress;
     }   
 }

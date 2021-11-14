@@ -1,9 +1,13 @@
-package joni.java.javaproject;
+package joni.java.javaproject.Models;
 
-public class addData{
-    long sid;
-    long cid;   
+public class Data {
+    private long sid;
+    private long cid;   
 
+    public Data(long sid, long cid) {
+        this.sid = sid;
+        this.cid = cid;
+    }
 
     public long getSid() {
         return this.sid;

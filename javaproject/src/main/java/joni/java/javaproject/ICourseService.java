@@ -1,5 +1,6 @@
 package joni.java.javaproject;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 import joni.java.javaproject.Models.Course;
 import joni.java.javaproject.Models.Student;
@@ -7,10 +8,10 @@ import joni.java.javaproject.Models.Student;
 public interface ICourseService {
     
     // Gets list of students 
-    List<Student> getStudents();
+    List<Student> getStudents() throws FileNotFoundException;
 
     // Gets list of courses
-    List<Course> getCourses();
+    List<Course> getCourses() throws FileNotFoundException;
 
     // Gets student by ID. Returns null if student not found.
     Student getStudentById(long studentId);
